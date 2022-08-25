@@ -1,0 +1,93 @@
+html {
+    font-family: 'Poppins', 'San Serif';
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --details_color: rgb(46, 46, 236);
+}
+ul, ol, menu{
+    list-style: none;
+}
+
+a {
+    color: currentColor;
+    text-decoration: none;
+}
+
+body {
+    background-color: rgb(238, 238, 238);
+}
+
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+#title {
+    max-width: fit-content;
+    line-height: 1.6rem;
+    margin: 0 auto;
+    font-size: 1.6rem;
+    text-align: left;
+    padding: 2rem 0;
+    display: flex;
+    flex-direction: column;
+}
+
+#title span {
+    color: var(--details_color);
+    font-size: 2.4rem;
+}
+
+.add_task_section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.4rem;
+    margin-bottom: 2rem;
+}
+
+input {
+    border-radius: 6px;
+    padding: 1rem;
+}
+
+input[type="button"] {
+    background-color: var(--details_color);
+    color: whitesmoke;
+    padding: 1rem 2rem;
+    font-weight: 700;
+}
+
+.todo {
+    padding: 1rem 1.2rem;
+    margin-bottom: 0.8rem;
+    font-weight: bold;
+    background-color: whitesmoke;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+i.fa-check {
+    color: var(--details_color);
+    display: none;
+}
+
+.todo:hover i.fa-check {
+    display: block;
+}
+
+.done {
+    color: lightgray;
+    text-decoration: line-through;
+}
+
+:where(.todo.done) i.fa-check{
+    display: none;
+}
