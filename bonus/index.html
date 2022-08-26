@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <title>To do list - Vue Js</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.8/dist/vue.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div id="root">
+
+        <main>
+            <div class="container">
+                <h1 id="title">
+                    <span>TO DO</span> list
+                </h1>
+                <section class="add_task_section">
+                    <input type="text" name="textTask" id="text" placeholder="New Task..." v-model="newTask" @keyup.enter="addTask">
+                    <input type="button" value="Add Task!" @click="addTask">
+                </section>
+                <section class="todos_section">
+                    <ul class="todo_list">
+                        <li v-for="el in uncompletdTasks" class="todo">
+                            {{el.text}}
+                            <i @click="checked(el)" class="fa-solid fa-check"></i>
+                        </li>
+                    </ul>
+                </section>
+                <section class="tasks_completed">
+                    <h2 id="completed_title">
+                        Completed Tasks
+                    </h2>
+                    <ul class="task_list__completed">
+                        <li v-for="el in completedTasks" class="todo done">
+                            {{el.text}}
+                        </li>
+                    </ul>
+                </section>
+            </div>
+        </main>
+        
+    </div>
+
+    <script src="./js/main.js"></script>
+</body>
+</html>
